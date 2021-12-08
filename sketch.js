@@ -47,6 +47,11 @@ if(keyDown(RIGHT_ARROW)){
  arrowS();
 }
 
+if(arrow.isTouching(zomgroup)){
+   score=score+5;
+    zomgroup.destroyEach();
+  }
+  
 Zombiespawn();
 
     drawSprites();
@@ -59,6 +64,7 @@ if(frameCount%100===0){
     zombie.velocityX=-2;
 zombie.scale=0.1;
 zomgroup.add(zombie);
+
 }
 }
 function arrowS(){
@@ -69,9 +75,6 @@ arrow.scale=0.2;
 arrow.velocityX=3;
 argroup.add(arrow);
 
-if(arrow.isTouching(zomgroup)){
-    score=score+5;
-    zombie.destroy();
-    }
+
     
 }
